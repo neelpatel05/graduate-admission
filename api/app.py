@@ -21,4 +21,4 @@ def predict_acceptance_rate():
 
 if __name__=="__main__":
     model=joblib.load("usa-graduate-admission.pkl")
-    app.run(host="127.0.0.1",port=8080)
+    app.run()
