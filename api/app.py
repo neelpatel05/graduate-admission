@@ -17,12 +17,11 @@ def predict_acceptance_rate():
             message = "Please include all the data"
             return jsonify(message = message),200
     a = [ j for i,j in data.items()]
-    print(a)
-    b = [[310,100,8,2,3,5]]
+    b = [a]
     x = model.predict(b)
     return jsonify(acceptance = x[0])
 
 if __name__ == "__main__":
-    file = open("usa-graduate-admission.sav","rb")
+    file = open("usa-graduate-admission2.sav","rb")
     model = pickle.load(file)
     app.run()
