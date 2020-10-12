@@ -36,10 +36,10 @@ def predict_acceptance_rate():
 		message = "Please send data after url"
 		return jsonify(message = message),200
 
+	file = open("usa-graduate-admission2.sav","rb")
+	model = pickle.load(file)
 	x = model.predict([data])
 	return jsonify(acceptance = x[0])
 
 if __name__ == "__main__":
-	file = open("usa-graduate-admission2.sav","rb")
-	model = pickle.load(file)
-	app.run()
+	app.run(threaded = True, port = 5000)
